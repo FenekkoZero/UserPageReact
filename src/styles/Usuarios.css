@@ -1,0 +1,64 @@
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+.boxPerfiles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-content: center;
+    gap: 25px;
+    min-height: 100vh;
+    background-color: #a3ccd8;    
+
+}
+
+.listaPerfiles{
+
+    color: #081f5e;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(211, 228, 243);
+    width: 70vh;
+    height: 22vh;
+    border-radius: 15px;
+    margin-left: 10vh;
+
+    display: flex;                /* 👉 activar flexbox */
+    flex-direction: column;       /* 👉 para que los hijos se apilen verticalmente */
+    justify-content: center;      /* 👉 centrar verticalmente */
+    align-items: center;          /* 👉 centrar horizontalmente */
+   
+}
+
+
+h3 {
+  font-size: 28px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+h4 {
+  font-size: 22px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.linkPerfil {
+  font-size: 20px;
+  background-color: #4d5b99;
+  color: rgb(246, 254, 255);
+  text-align: center;
+  text-decoration: none;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  width: 16vw;
+  align-content: center;
+}
+
+.linkPerfil:hover {
+  background-color: #081f5e;
+}
+

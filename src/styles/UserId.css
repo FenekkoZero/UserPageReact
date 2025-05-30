@@ -1,0 +1,84 @@
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+.UserBox {
+    display: flex;
+    flex-direction: column;
+    gap: 20;
+    min-height: 100vh;
+    background-color: #a3ccd8;
+    
+
+}
+
+.HeaderPerfil {
+    font-size:  43px;
+    font-weight: bolder;
+    text-align: left;
+    align-content: center;
+    color: #101c3f;
+    text-decoration:double;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 3%;
+    margin-bottom: 1%;
+    height: 10vh;
+    width: 30vh;
+    
+}
+
+li {
+    font-size:  25px;
+    font-weight: bolder;
+    color: #081f5e;
+    font-family: 'Courier New', Courier, monospace;
+    
+    align-content: center;
+    margin-left: 5%;
+    margin-top: 2%;
+    height: 7vh;
+    width: 80vh;
+    background-color: rgb(211, 228, 243);
+    border-radius: 6px;
+    list-style-type: none;
+}
+
+.Fecha{
+  height: 14vh;
+}
+
+.back-button {
+  display: inline-block;
+  font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  background-color: #4d5b99;
+  color: rgb(246, 254, 255);
+  text-decoration: none;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  width: 13vw;
+}
+
+.back-button:hover {
+  background-color: #081f5e;
+}
+
+.profileImg{
+  width: 40vh;
+  margin-left: 15%;
+  border-radius: 80px;
+}
+
+.EditarYBorrar{
+  display: flex;
+  align-items: center;
+  margin-left: 10%;
+  margin-bottom: 2%;
+  gap: 18px;
+  outline: none;
+}
