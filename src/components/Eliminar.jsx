@@ -1,4 +1,7 @@
 import { useNavigate } from "react-router";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export const BotonEliminar = ({ id }) => {
     const navigate = useNavigate();
@@ -14,11 +17,11 @@ export const BotonEliminar = ({ id }) => {
 
             if (!res.ok) throw new Error("Error al eliminar");
 
-            alert("Usuario eliminado correctamente");
+            toast.error('Usuario Eliminado');
             navigate("/usuarios");
         } catch (err) {
             console.error(err);
-            alert("No se pudo eliminar el usuario");
+            toast.error('No se pudo eliminar el usuario');
         }
     };
 

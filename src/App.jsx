@@ -4,8 +4,10 @@ import { Inicio } from "./pages/Inicio"
 import {Usuarios} from "./pages/Usuarios"
 import {Nav} from "./components/nav"
 import { DetallesId } from "./pages/userid"
-import { Registro } from "./pages/registro"
+import { Registro } from "./pages/Registro"
 import { Editar } from "./pages/EditarPerfil"
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -24,6 +26,11 @@ function App() {
         {/* Error404 está contenido dentro de un bloque </> para pasarlo como un elemento jsx 
         debido a un cambio en la sintaxis; los elementos jsx se llaman de manera diferente desde React v17*/}
       </Routes>
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        theme="colored"
+      />
       </main>
     </BrowserRouter>
   )

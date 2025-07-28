@@ -24,27 +24,33 @@
 
 /* Ocultar el menú por defecto */
 .nav-links {
-  display: none;
-  flex-direction: column;
+  display: flex;               /* Mostrar como flex */
+  flex-direction: column;      /* En columna (uno debajo del otro) */
+  align-items: flex-start;     /* Alineación izquierda */
   background-color: #3f3b5a;
-  padding: 1rem;
-  opacity: 60%;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 1rem;
+  transition: max-height 0.3s ease, opacity 0.5s ease;
 }
 
-/* Mostrar el menú cuando está activo */
 .nav-links.activo {
-  display: flex;
+  max-height: 500px;
+  opacity: 1;
+  padding: 1rem;
 }
 
 .nav-links a {
-    color: white;
-    opacity: 100%;
+  display: block;              /* Asegura que cada link ocupe toda una línea */
+  color: white;
   font-size: 20px;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
   text-decoration: none;
   margin-bottom: 0.5rem;
 }
+
 
 .nav-links a:hover {
   text-decoration: underline;

@@ -1,8 +1,15 @@
 import { useState } from "react"
+import { useNavigate } from "react-router";
 import '../styles/Registro.css'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const Registro = () => {
+    const navigate = useNavigate();
+
+
+
     const[User,setUser] = useState({
         nombre:'',
         email:'',
@@ -32,6 +39,7 @@ export const Registro = () => {
         }
         catch(err){
             console.log(err)
+            toast.error('Error al enviar los datos');
         }
         finally {
             setExito(true)
@@ -41,6 +49,14 @@ export const Registro = () => {
                 activo:true,
                 contraseña:'',
             })
+            toast.success('✅ Usuario creado correctamente!');
+            
+            // Redirige después de un breve retraso
+            setTimeout(() => {
+                navigate('/usuarios');
+                }, 100); // esperar 100ms da tiempo al toast de montarse correctamente
+
+            
         }
     }
 
@@ -48,11 +64,6 @@ export const Registro = () => {
         <div className="RegistroBox">
             <h1>Registro</h1>
                 
-                    {Exito ?(
-                    <span>
-                        Se creó el usuario con éxito
-                    </span>
-                    ):(
                     <form className="RegistroForma" onSubmit={manejarEnvio}>
                     
                         <input type='text' placeholder="Nombre" name='nombre' value={User.nombre} onChange={manejarCambio}/>
@@ -64,9 +75,7 @@ export const Registro = () => {
                         <button type="submit" className="BotonEnviar">Crear Cuenta</button>
 
                     </form>
-
-                    )}
-                
+                        
         </div>
     )
 }
