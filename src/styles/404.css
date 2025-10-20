@@ -1,36 +1,52 @@
+@font-face{font-family: Y2K;
+    src: url(../fonts/y-1999-k-sans.otf);
+}
+
+@font-face{font-family: Metropolis;
+    src: url(../fonts/Metropolis-Regular.ttf);
+}
+
 .error404{
     display: flex;
     flex-direction: column;
     gap: 20;
     min-height: 100vh;
-    background-color: #a3ccd8;
     justify-content: center;
     align-items: center;
 }
 
 .back {
   display: inline-block;
+  font-family: 'metropolis';
+  letter-spacing: 3px;
   font-size: 20px;
-  background-color: #4d5b99;
+  text-align: center;
+  background-color:  #081f5e;
   color: rgb(246, 254, 255);
   text-decoration: none;
   margin-top: 20px;
   padding: 10px 20px;
   border-radius: 6px;
   font-weight: bold;
+  height: 7vh;
 }
 
 .back:hover {
-  background-color: #081f5e;
+  background-color: #344f97;
 }
-h1 {
-    font-size:  40px;
+.error_header {
+    font-size:  70px;
     font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'y2k';
+    letter-spacing: 6px;
+    text-align: center;
+    margin-bottom: 5%;
 }
 
 p {
     font-size:  30px;
     font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'metropolis';
+    letter-spacing: 4px;
+    color: rgb(246, 254, 255);
 }

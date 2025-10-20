@@ -74,13 +74,36 @@ export const Editar = () =>{
     }, [])
 
 
-    if (Loading) return <h1 className="UserBox">Cargando...</h1>
+    if (Loading) return
+    <h1 className="UserBox">Cargando...</h1>
+    {/* Elementos del fondo animado */}
+        <div class="background">
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+</div>
 
     return(
         <div className="UserBox">
-            <h1>Editar Perfil</h1>
+            <h1 className="edit_header">Editar Perfil</h1>
         
-            <form onSubmit={manejarEnvio}>
+            <form className="edit_form" onSubmit={manejarEnvio}>
                 
                 <input
                     type="text"
@@ -117,9 +140,33 @@ export const Editar = () =>{
                     onChange={manejarCambio}
                 />
 
-                <button type="submit" className="back-button">Realizar Cambios</button>{''}
+                <button type="submit" className="submit-button">Realizar Cambios</button>{''}
 
             </form>
+        
+        {/* Elementos del fondo animado */}
+        <div class="background">
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+</div>
+
         </div>
     )
 }

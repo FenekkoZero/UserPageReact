@@ -1,8 +1,16 @@
+@font-face{font-family: Y2K;
+    src: url(../fonts/y-1999-k-sans.otf);
+}
+
+@font-face{font-family: Metropolis;
+    src: url(../fonts/Metropolis-Regular.ttf);
+}
+
 .nav-container {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #101c3f;
+  background-color: #101c3fbd;
   color: white;
   z-index: 1000;
 }
@@ -27,17 +35,15 @@
   display: flex;               /* Mostrar como flex */
   flex-direction: column;      /* En columna (uno debajo del otro) */
   align-items: flex-start;     /* Alineación izquierda */
-  background-color: #3f3b5a;
+  background-color: #101c3f6e;
   max-height: 0;
   overflow: hidden;
-  opacity: 0;
   padding: 0 1rem;
-  transition: max-height 0.3s ease, opacity 0.5s ease;
+  transition: max-height 0.3s ease;
 }
 
 .nav-links.activo {
   max-height: 500px;
-  opacity: 1;
   padding: 1rem;
 }
 
@@ -45,7 +51,8 @@
   display: block;              /* Asegura que cada link ocupe toda una línea */
   color: white;
   font-size: 20px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Metropolis', monospace;
+  letter-spacing: 3px;
   font-weight: bold;
   text-decoration: none;
   margin-bottom: 0.5rem;
@@ -57,5 +64,7 @@
 }
 
 h2 {
-    font-size: 30px;
+    font-size: 50px;
+    font-family: 'y2k';
+    letter-spacing: 3px;
 }

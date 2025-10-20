@@ -37,6 +37,29 @@ export const Usuarios = () => {
         return( 
         <div className="boxPerfiles">
             <h1> Cargando... </h1>
+
+            {/* Elementos del fondo animado */}
+        <div class="background">
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+</div>
         </div>
         )
     }
@@ -50,5 +73,29 @@ export const Usuarios = () => {
                 </div>
             ))
             }
+
+            {/* Elementos del fondo animado */}
+        <div class="background">
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+</div>
+
         </div>
 }

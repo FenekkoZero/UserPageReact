@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useParams } from "react-router"
-import '../styles/UserId.css'
+import '../styles/userId.css'
 import { Link } from "react-router"
 
 import profilePlaceholder from '../assets/profile_placeholder.svg'
@@ -36,6 +36,29 @@ export const DetallesId = () => {
         return(
             <div className="UserBox">
                 <h1>Cargando...</h1>
+            
+            {/* Elementos del fondo animado */}
+        <div class="background">
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+</div>
             </div>
         )
     }
@@ -59,6 +82,29 @@ export const DetallesId = () => {
             <Link to={'/usuario/editar/' + Perfil._id} className="back-button"> Editar</Link>
             <BotonEliminar id={id} />
         </div>
+
+        {/* Elementos del fondo animado */}
+        <div class="background">
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+</div>
     </div>
     )
 }

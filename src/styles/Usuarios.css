@@ -9,16 +9,16 @@
     grid-template-columns: repeat(2, 1fr);
     align-content: center;
     gap: 25px;
-    min-height: 100vh;
-    background-color: #a3ccd8;    
+    min-height: 100vh;  
 
 }
 
 .listaPerfiles{
 
-    color: #081f5e;
-    font-family: 'Courier New', Courier, monospace;
-    background-color: rgb(211, 228, 243);
+    color: rgb(246, 254, 255);
+    font-family: 'metropolis', monospace;
+    letter-spacing: 3px;
+    background-color: rgba(12, 12, 95, 0.562);
     width: 70vh;
     height: 22vh;
     border-radius: 15px;
@@ -46,7 +46,7 @@ h4 {
 
 .linkPerfil {
   font-size: 20px;
-  background-color: #4d5b99;
+  background-color:  #081f5e;
   color: rgb(246, 254, 255);
   text-align: center;
   text-decoration: none;
@@ -59,6 +59,6 @@ h4 {
 }
 
 .linkPerfil:hover {
-  background-color: #081f5e;
+  background-color: #344f97;
 }
 
