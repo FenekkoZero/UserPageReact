@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useParams } from "react-router"
-import '../styles/userId.css'
+import '../styles/userid.css'
 import { Link } from "react-router"
 
 import profilePlaceholder from '../assets/profile_placeholder.svg'
