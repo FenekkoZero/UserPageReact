@@ -4,7 +4,7 @@ import '../styles/userid.css'
 import { Link } from "react-router"
 
 import profilePlaceholder from '../assets/profile_placeholder.svg'
-import { BotonEliminar } from "../components/eliminar"
+import { BotonEliminar } from "../components/Eliminar.jsx"
 
 export const DetallesId = () => {
     const{id} = useParams()
