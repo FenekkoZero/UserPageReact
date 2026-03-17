@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import { supabase } from '../supabaseClient';
 import '../styles/Usuarios.css'
 
 export const Usuarios = () => {
@@ -10,24 +11,27 @@ export const Usuarios = () => {
     const [error, setError] = useState(null)
 
     useEffect(() => {
-        const obtenerPerfiles= async () =>{
-            try{
-                const res = await fetch('https://datum-q26q.onrender.com/api/usuarios')
+    const obtenerPerfiles = async () => {
+        try {
+            const { data, error: supabaseError } = await supabase
+                .from('usuarios')
+                .select('*')
 
-                const data = await res.json()
-                setPerfiles(data.datos)
-            }
-            catch (err){
-                console.log(err)
-                setError(err)
-            }
-            finally {
-                setLoading(false)
-            }
+            if (supabaseError) throw supabaseError
+
+            setPerfiles(data)
         }
+        catch (err) {
+            console.log(err)
+            setError(err)
+        }
+        finally {
+            setLoading(false)
+        }
+    }
 
-        obtenerPerfiles()
-    }, [])
+    obtenerPerfiles()
+}, [])
 
     if(error){
         return <h1 style={{ color: 'red' }}>Hubo un error inesperado al obtener los usuarios</h1>
@@ -66,10 +70,10 @@ export const Usuarios = () => {
 
     return<div className="boxPerfiles">  {/* Aquí se crean las Profile Cards */}
             {perfiles.map(user => (
-                <div className="listaPerfiles">
+                <div className="listaPerfiles" key={user.id}>
                     <h3>{user.nombre}</h3> {/* Se llama al array de los datos de usuarios guardado en la API */}
                     <h4>{user.email}</h4>
-                    <Link to ={'/usuario/' + user._id} className="linkPerfil">Ver Detalles</Link>
+                    <Link to ={'/usuario/' + user.id} className="linkPerfil">Ver Detalles</Link>
                 </div>
             ))
             }
