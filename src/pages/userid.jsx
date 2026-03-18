@@ -2,35 +2,39 @@ import React, { useEffect, useState } from "react"
 import { useParams } from "react-router"
 import '../styles/userid.css'
 import { Link } from "react-router"
+import { supabase } from '../supabaseClient';
 
 import profilePlaceholder from '../assets/profile_placeholder.svg'
 import { BotonEliminar } from "../components/Eliminar.jsx"
 
 export const DetallesId = () => {
+    
     const{id} = useParams()
 
-    const [Perfil,setPerfil] = useState({})
+    const [usuario,setUsuario] = useState(null)
     const [loading, setLoading] = useState(true)
     const [err, setErr] = useState(null)
 
+
     useEffect(() => {
-        const obtenerPerfilId = async () =>{
-            try{
-                const res = await fetch('https://datum-q26q.onrender.com/api/usuarios/' + id)
-                const data = await res.json()
+        const obtenerUsuario = async () => {
+            const { data, error } = await supabase
+                .from('usuarios')
+                .select('*')
+                .eq('id', id)
+                .single()
 
-                setPerfil(data.datos)
+            if (error) {
+                console.log(error)
+            } else {
+                setUsuario(data)
+            }
 
-            }
-            catch (err){
-                console.log('Hubo un error')
-            }
-            finally{
-                setLoading(false)
-            }
+            setLoading(false)
         }
-        obtenerPerfilId()
-    }, [])
+
+        obtenerUsuario()
+    }, [id])
 
     if (loading){
         return(
@@ -63,6 +67,8 @@ export const DetallesId = () => {
         )
     }
     
+    if (!usuario) return <h1>Usuario no encontrado</h1>
+
     return(
     <div className="UserBox">
         <Link to="/usuarios" className="back-button"> Volver</Link>
@@ -71,15 +77,15 @@ export const DetallesId = () => {
 
         <ul>
             <li>ID: {id}</li>
-            <li>Nombre: {Perfil.nombre}</li>
-            <li>Correo: {Perfil.email}</li>
+            <li>Nombre: {usuario.nombre}</li>
+            <li>Correo: {usuario.email}</li>
             <li className="Fecha">Fecha de Registro <br/>
-            :{Perfil.fechaCreacion}</li>
-            <li>{Perfil.activo ? 'Cuenta activa': 'Cuenta inactiva'}</li>
+            :{usuario.fechaCreacion}</li>
+            <li>{usuario.activo ? 'Cuenta activa': 'Cuenta inactiva'}</li>
         </ul>
 
         <div className="EditarYBorrar">
-            <Link to={'/usuario/editar/' + Perfil._id} className="back-button"> Editar</Link>
+            <Link to={'/usuario/editar/' + usuario.id} className="back-button"> Editar</Link>
             <BotonEliminar id={id} />
         </div>
 
